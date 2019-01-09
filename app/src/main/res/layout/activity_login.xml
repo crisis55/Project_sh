@@ -142,7 +142,7 @@
                        android:layout_centerHorizontal="true"
                        android:layout_gravity="center_horizontal"
                        android:layout_marginTop="40dp"
-                       android:layout_marginBottom="70dp"/>
+                       android:layout_marginBottom="71dp"/>
 
                    <TextView
                        android:layout_width="wrap_content"
