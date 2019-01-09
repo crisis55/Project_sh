@@ -20,5 +20,8 @@
     <string name="LoginNow">Sign in</string>
     <string name="signUp">Sign up</string>
     <string name="forgotPassword">Forgot password?</string>
+    <string name="cancel_login">Acceso cancelado</string>
+    <string name="error_login">Ocurrió un error</string>
+    <string name="options">O</string>
 
 </resources>

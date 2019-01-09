@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Shotping</string>
     <!-- Strings related to login -->
+    <string name="facebook_app_id" translatable="false">480880839107613</string> <string name="fb_login_protocol_scheme" translatable="false">fb480880839107613</string>
     <string name="prompt_email">Correo</string>
     <string name="prompt_password">Contraseña (opcional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -16,6 +17,9 @@
     <string name="login">Acceder</string>
     <string name="password">Contraseña</string>
     <string name="LoginNow">Iniciar sesión</string>
-    <string name="signUp">Resgístrate</string>
+    <string name="signUp">Registrarse</string>
     <string name="forgotPassword">Olvidé mi contraseña</string>
+    <string name="cancel_login">Acceso cancelado</string>
+    <string name="error_login">Ocurrió un error</string>
+    <string name="options">O</string>
 </resources>
