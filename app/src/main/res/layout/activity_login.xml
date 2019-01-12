@@ -165,11 +165,11 @@
                        android:layout_height="40dp"
                        android:layout_below="@+id/linlay"
                        android:layout_marginTop="30dp"
-                       android:background="@drawable/btn_bg"
+                       android:background="@drawable/animation_login_btn"
                        android:fontFamily="sans-serif-medium"
                        android:text="@string/LoginNow"
+                       android:textColor="@drawable/txt_color"
                        android:textAllCaps="false"
-                       android:textColor="@color/white"
                        android:paddingLeft="70dp"
                        android:paddingRight="70dp"
                        android:layout_centerHorizontal="true"
@@ -199,21 +199,21 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/transparent"
+            android:background="@drawable/animation_register_btn"
             android:fontFamily="sans-serif"
             android:text="@string/signUp"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@drawable/txt_color" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@color/transparent"
+            android:background="@drawable/animation_register_btn"
             android:fontFamily="sans-serif"
             android:text="@string/forgotPassword"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@drawable/txt_color" />
 
 
     </RelativeLayout>
