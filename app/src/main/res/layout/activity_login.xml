@@ -13,9 +13,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
 
-
-
-
            <RelativeLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
@@ -86,8 +83,6 @@
                                android:layout_marginTop="5dp"
                                android:id="@+id/email"/>
 
-
-
                        </LinearLayout>
 
                        <LinearLayout
@@ -119,23 +114,18 @@
                                android:id="@+id/password"
                                android:inputType="textPassword"/>
 
-
-
                        </LinearLayout>
-
-
-
 
                    </LinearLayout>
 
                    <com.facebook.login.widget.LoginButton
                        android:id="@+id/login_button"
-                       android:layout_width="wrap_content"
-                       android:layout_height="40dp"
+                       android:layout_width="220dp"
+                       android:layout_height="90dp"
                        android:layout_below="@+id/email_sign_in_button"
                        android:layout_centerHorizontal="true"
                        android:layout_gravity="center_horizontal"
-                       android:layout_marginTop="40dp"
+                       android:layout_marginTop="50dp"
                        android:layout_marginBottom="75dp"/>
 
                    <ProgressBar
@@ -149,16 +139,44 @@
                        android:layout_marginBottom="8dp"
                        android:visibility="gone" />
 
-                   <TextView
-                       android:layout_width="wrap_content"
+                   <RelativeLayout
+                       android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:textColor="@color/white"
-                       android:layout_below="@id/email_sign_in_button"
                        android:layout_centerHorizontal="true"
-                       android:layout_marginTop="13dp"
-                       android:layout_marginBottom="15dp"
-                       android:fontFamily="sans-serif-medium"
-                       android:text="@string/options" />
+                       android:layout_below="@id/email_sign_in_button">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textColor="@color/white"
+                           android:layout_centerHorizontal="true"
+                           android:layout_marginTop="13dp"
+                           android:layout_marginBottom="15dp"
+                           android:fontFamily="sans-serif-medium"
+                           android:text="@string/options"
+                           android:id="@+id/options"/>
+
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_centerVertical="true"
+                           android:layout_marginLeft="7dp"
+                           android:layout_marginRight="5dp"
+                           android:layout_toLeftOf="@id/options"
+                           android:background="#FFFFFF"
+                           />
+
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_centerVertical="true"
+                           android:layout_marginRight="7dp"
+                           android:layout_marginLeft="5dp"
+                           android:layout_toRightOf="@id/options"
+                           android:background="#FFFFFF"
+                           />
+
+                   </RelativeLayout>
 
                    <Button
                        android:layout_width="wrap_content"
@@ -176,13 +194,7 @@
                        android:textSize="16sp"
                        android:id="@+id/email_sign_in_button"/>
 
-
-
-
-
-
                </RelativeLayout>
-
 
         </RelativeLayout>
 
@@ -203,7 +215,8 @@
             android:fontFamily="sans-serif"
             android:text="@string/signUp"
             android:textAllCaps="true"
-            android:textColor="@drawable/txt_color" />
+            android:textColor="@drawable/txt_color"
+            android:id="@+id/register_button_main"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -215,9 +228,6 @@
             android:textAllCaps="true"
             android:textColor="@drawable/txt_color" />
 
-
     </RelativeLayout>
-
-
 
 </RelativeLayout>

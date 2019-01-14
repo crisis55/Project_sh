@@ -20,8 +20,13 @@
     <string name="LoginNow">Sign in</string>
     <string name="signUp">Sign up</string>
     <string name="forgotPassword">Forgot password?</string>
-    <string name="cancel_login">Acceso cancelado</string>
-    <string name="error_login">Ocurrió un error</string>
-    <string name="options">O</string>
+    <string name="cancel_login">Login canceled</string>
+    <string name="error_login">Something went wrong</string>
+    <string name="options">Or</string>
+    <string name="Registrarse">Sign up</string>
+    <string name="email_register">Email</string>
+    <string name="name_register_form">Full name</string>
+    <string name="username_register_form">Username</string>
+    <string name="password_confirmation_register">Confirm password</string>
 
 </resources>
