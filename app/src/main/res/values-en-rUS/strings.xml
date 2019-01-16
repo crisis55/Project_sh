@@ -28,5 +28,15 @@
     <string name="name_register_form">Full name</string>
     <string name="username_register_form">Username</string>
     <string name="password_confirmation_register">Confirm password</string>
+    <string name="input_error_name">El campo del nombre está vacío</string>
+    <string name="input_error_email">El campo del correo está vacío</string>
+    <string name="input_error_email_invalid">El dato introducido no es un correo electrónico</string>
+    <string name="input_error_password">El campo de la contraseña está vacío</string>
+    <string name="input_error_password_length">La contraseña debe contener 6 o más caracteres</string>
+    <string name="input_error_username">El campo de del nombre de usuario está vacío</string>
+    <string name="registration_failure">El registro no se pudo completar</string>
+    <string name="input_error_confirmPassword">El campo de confirmar la contraseña está vacío</string>
+    <string name="input_error_comparison">Las contraseñas no coinciden</string>
+    <string name="registration_success">El usuario fue registrado</string>
 
 </resources>
