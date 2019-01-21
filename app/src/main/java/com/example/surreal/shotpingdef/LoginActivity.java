@@ -7,8 +7,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -32,7 +34,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 
-public class LoginActivity extends AppCompatActivity  {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private EditText emailtxt, passwordtxt;
 
     private FirebaseAuth auth;
     private FirebaseUser user;
@@ -74,6 +78,11 @@ public class LoginActivity extends AppCompatActivity  {
                 goRegisterScreen();
             }
         });
+
+        passwordtxt = findViewById(R.id.password_login);
+        emailtxt = findViewById(R.id.email_login);
+        findViewById(R.id.email_sign_in_button).setOnClickListener(this);
+
 
         loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("email"));
@@ -136,5 +145,54 @@ public class LoginActivity extends AppCompatActivity  {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
-}
+
+    private void userLogin (){
+        final String email = emailtxt.getText().toString().trim();
+        final String password = passwordtxt.getText().toString().trim();
+
+        if (email.isEmpty()) {
+            emailtxt.setError(getString(R.string.input_error_email));
+            emailtxt.requestFocus();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailtxt.setError(getString(R.string.input_error_email_invalid));
+            emailtxt.requestFocus();
+            return;
+        }
+        if (password.isEmpty()) {
+            passwordtxt.setError(getString(R.string.input_error_password));
+            passwordtxt.requestFocus();
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                progressBar.setVisibility(View.GONE);
+                if (task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+           switch (view.getId()) {
+               case R.id.email_sign_in_button:
+                   userLogin();
+                   break;
+           }
+        }
+    }
+
 

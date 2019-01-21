@@ -34,7 +34,7 @@
                    android:layout_below="@+id/imgView_logo"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:id="@+id/rellayl"
+                   android:id="@+id/rellayl">
                    android:visibility="gone">
 
                    <TextView
@@ -81,7 +81,7 @@
                                android:paddingRight="15dp"
                                android:inputType="textEmailAddress"
                                android:layout_marginTop="5dp"
-                               android:id="@+id/email"/>
+                               android:id="@+id/email_login"/>
 
                        </LinearLayout>
 
@@ -111,7 +111,7 @@
                                android:paddingLeft="15dp"
                                android:paddingRight="15dp"
                                android:layout_marginTop="5dp"
-                               android:id="@+id/password"
+                               android:id="@+id/password_login"
                                android:inputType="textPassword"/>
 
                        </LinearLayout>

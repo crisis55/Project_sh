@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#23A7D8</color>
+    <color name="colorPrimary">#fe0303</color>
     <color name="colorPrimaryDark">#010607</color>
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
@@ -8,4 +8,5 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="gradStop">#fe0303</color>
     <color name="black">#020000</color>
+    <color name="gray">#bfbfbf</color>
 </resources>

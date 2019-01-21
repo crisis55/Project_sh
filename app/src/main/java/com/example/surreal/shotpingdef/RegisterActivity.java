@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,11 +46,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
         progressBar = (ProgressBar) findViewById(R.id.login_progress_register);
-        
+
 
         auth = FirebaseAuth.getInstance();
-
-
 
         findViewById(R.id.register_button).setOnClickListener(this);
     }
@@ -57,10 +56,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onStart() {
         super.onStart();
-
-        if (auth.getCurrentUser() != null) {
-
-        }
+        FirebaseUser currentUser = auth.getCurrentUser();
     }
 
     private void registerUser() {
@@ -121,9 +117,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         return;
                     }
 
-                    if (confirmPassword.equals(password)) {
-
-                    } else {
+                    if (!confirmPassword.equals(password)) {
                         confirmpasswordtxt.setError (getString(R.string.input_error_comparison));
                         confirmpasswordtxt.requestFocus();
                         return;
@@ -136,6 +130,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                                     if (task.isSuccessful()) {
+
+                                        FirebaseUser users = auth.getCurrentUser();
 
                                         User user = new User(
                                                 name,
@@ -151,6 +147,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                                 progressBar.setVisibility(View.GONE);
                                                 if (task.isSuccessful()) {
                                                     Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                                    finish();
+
                                                 } else {
                                                     Toast.makeText(RegisterActivity.this, getString(R.string.registration_failure), Toast.LENGTH_LONG).show();
                                                 }
