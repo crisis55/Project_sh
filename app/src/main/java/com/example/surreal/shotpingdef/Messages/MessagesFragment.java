@@ -1,4 +1,4 @@
-package com.example.surreal.shotpingdef.MainHome;
+package com.example.surreal.shotpingdef.Messages;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.example.surreal.shotpingdef.R;
 
-public class MessagesPiece extends Fragment {
+public class MessagesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate (R.layout.piece_messages, container, false);
+        return inflater.inflate (R.layout.fragment_messages, container, false);
     }
 }

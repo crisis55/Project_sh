@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.surreal.shotpingdef.Coupon.CouponFragment;
 import com.example.surreal.shotpingdef.MainHome.MainFragment;
+import com.example.surreal.shotpingdef.Messages.MessagesFragment;
 import com.example.surreal.shotpingdef.Notification.NotificationFragment;
 import com.example.surreal.shotpingdef.Profile.ProfileFragment;
 import com.example.surreal.shotpingdef.Search.SearchFragment;
@@ -58,15 +59,14 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.ic_search:
                             selectedFragment = new SearchFragment();
                             break;
-                        case R.id.ic_notification:
-                            selectedFragment = new NotificationFragment();
-                            break;
                         case R.id.ic_profile:
                             selectedFragment = new ProfileFragment();
                             break;
                         case R.id.ic_coupons:
                             selectedFragment = new CouponFragment();
                             break;
+                        case R.id.ic_messages:
+                            selectedFragment = new MessagesFragment();
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
