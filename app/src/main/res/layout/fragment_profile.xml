@@ -1,21 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_dark">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/bar">
 
-        <include layout="@layout/layout_center_profile"/>
-        
-        <ProgressBar
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/profileProgressBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"/>
+        <include layout="@layout/snippet_top_profile_bar"/>
+    </android.support.design.widget.AppBarLayout>
 
-    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar">
 
-</android.support.design.widget.CoordinatorLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="-1dp"
+                android:id="@+id/topBar">
+
+                <ImageView
+                    android:id="@+id/profileBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/bg_red" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="158dp"
+                    android:layout_marginTop="55dp"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="2dp" />
+
+                <include layout="@layout/snippet_top_profile"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout2"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:id="@+id/linLayout1"
+                android:background="@drawable/white_grey_border_bottom">
+
+                <TextView
+                    android:id="@+id/display_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cristian Arley Pulgarín González"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:maxLength="35"
+                    android:ellipsize="end"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/facebook_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="280dp"
+                    android:layout_marginTop="-30dp"
+                    android:background="@drawable/fb_btn" />
+
+                <Button
+                    android:id="@+id/instagram_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="-33dp"
+                    android:background="@drawable/instagram" />
+
+                <Button
+                    android:id="@+id/twitter_button"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginLeft="312dp"
+                    android:layout_marginTop="-35dp"
+                    android:background="@drawable/twitter_btn" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerView"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/recyclerViewSave"/>
+            
+            
+         </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

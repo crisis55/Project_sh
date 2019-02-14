@@ -205,7 +205,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="1dp">
         android:visibility="gone">
 
         <Button
