@@ -65,13 +65,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         rellay1 = (RelativeLayout) findViewById(R.id.rellayl);
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
 
-         handler.postDelayed(runnable, 2000);
+        handler.postDelayed(runnable, 2000);
 
         auth = FirebaseAuth.getInstance();
         progressBar = (ProgressBar) findViewById(R.id.login_progress);
